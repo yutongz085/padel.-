@@ -1,0 +1,1 @@
+Project images are currently linked to external Unsplash URLs. Place local images here and update style.css/index.html to reference them if needed.

@@ -1,0 +1,66 @@
+/* Zenit Padel Custom Styles */
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: #050505;
+    color: #e5e5e5;
+    overflow-x: hidden;
+}
+
+.font-cinzel { font-family: 'Cinzel', serif; }
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+
+/* Animations */
+.fade-enter { opacity: 0; transform: translateY(20px); }
+.fade-enter-active { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+
+/* Glitch Effect */
+.glitch-text { position: relative; }
+.glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #050505;
+}
+.glitch-text::before {
+    left: 2px; text-shadow: -1px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch-text::after {
+    left: -2px; text-shadow: -1px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim {
+    0% { clip: rect(3px, 9999px, 11px, 0); }
+    20% { clip: rect(89px, 9999px, 99px, 0); }
+    100% { clip: rect(78px, 9999px, 92px, 0); }
+}
+@keyframes glitch-anim2 {
+    0% { clip: rect(22px, 9999px, 3px, 0); }
+    20% { clip: rect(1px, 9999px, 88px, 0); }
+    100% { clip: rect(12px, 9999px, 44px, 0); }
+}
+
+/* Ken Burns */
+.ken-burns { animation: kenBurns 20s infinite alternate; }
+@keyframes kenBurns {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.1) translate(-2%, -2%); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* Material Button State */
+.material-btn.active { border-color: #d4af37; color: #d4af37; background: rgba(212, 175, 55, 0.1); }
+
+/* Scanlines */
+.scanlines {
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+    background-size: 100% 4px;
+    pointer-events: none;
+}
